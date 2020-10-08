@@ -22,3 +22,16 @@ describe('GET /add', () => {
       .expect(400, done);
   });
 });
+
+describe('GET /multiply', () => {
+  it('respond with correct multiplication', (done) => {
+    request(app)
+      .get('/multiply?a=1&b=2')
+      .expect(200, { value: 2 }, done);
+  });
+  it('respond with error when no inputs', (done) => {
+    request(app)
+      .get('/multiply')
+      .expect(400, done);
+  });
+});
