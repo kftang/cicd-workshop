@@ -21,7 +21,7 @@ router.get('/multiply', (req, res) => {
   if (a && b) {
     const aNumber = Number(a);
     const bNumber = Number(b);
-    return res.json({ value: aNumber * bNumber })
+    return res.json({ value: aNumber / bNumber })
   }
   res.status(400).send('Invalid query');
 });
